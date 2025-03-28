@@ -1,0 +1,25 @@
+.auth {
+  width: 300px;
+  margin:  auto;
+  padding: 20px;
+  background-color: lightgray;
+  border-radius: 20px;
+}
+
+.auth__form {
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+}
+
+.auth__title {
+  margin: 0;
+  margin-bottom: 20px;
+	font-size: 30px;
+  line-height: 120%;
+}
+
+.auth__form input {
+  width: 100%;
+}
+
