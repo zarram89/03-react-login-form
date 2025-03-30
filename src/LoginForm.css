@@ -1,7 +1,7 @@
 .auth {
   width: 300px;
   margin:  50px auto;
-  padding: 20px;
+  padding: 30px;
   background-color: lightgray;
   border-radius: 20px;
 }
@@ -9,14 +9,15 @@
 .auth__form {
 	display: flex;
 	flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .auth__title {
   margin: 0;
   margin-bottom: 20px;
-	font-size: 30px;
+  font-size: 30px;
   line-height: 120%;
+  text-align: center;
 }
 
 .auth__form input {
@@ -25,6 +26,10 @@
   padding: 10px;
   border-radius: 10px;
   border: none;
+}
+
+.auth__form input[type="checkbox"] {
+	width: auto;
 }
 
 .visually-hidden {
