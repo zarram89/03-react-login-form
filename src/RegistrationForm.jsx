@@ -1,10 +1,10 @@
 import './LoginForm.css'
 
-export default function LoginForm() {
+export default function RegistarationForm() {
   return (
     <div className="auth">
       <form className="auth__form" action="#" method="post" autoComplete="off">
-        <h1 className="auth__title">Login Form</h1>
+        <h1 className="auth__title">Registration Form</h1>
         <div>
           <label>
             <span className="visually-hidden">Enter your name</span>
@@ -19,11 +19,17 @@ export default function LoginForm() {
         </div>
         <div>
           <label>
-            <input type="checkbox" name="remember" />
+            <span className="visually-hidden">Confirm your password</span>
+            <input type="password" name="confirm-password" placeholder="Confirm password" />
           </label>
-          <a href="#">Forgot Password?</a>
         </div>
-        <button className="auth__button" type="submit">Login</button>
+        <div>
+          <label>
+            <span className="visually-hidden">Enter your email address</span>
+            <input type="email" name="email" placeholder="Confirm email" />
+          </label>
+        </div>
+        <button className="auth__button" type="submit">Register</button>
       </form>
     </div>
   )

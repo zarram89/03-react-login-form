@@ -1,5 +1,11 @@
 import LoginForm from "./LoginForm";
+import RegistarationForm from "./RegistrationForm";
 
 export default function App() {
-  return <LoginForm />
+  const isAuth = false;
+
+  return (
+    isAuth ? 
+      <LoginForm /> : <RegistarationForm />
+  );
 }
