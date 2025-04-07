@@ -1,26 +1,28 @@
 const BASE_URL = 'https://api.genderize.io';
 
-const getData = async (name: string) => {
+type AnswerProps = {
+	count: number;
+	name: string;
+	gender: string | null;
+	probability: number;
+}
+
+const getAnswer = async (name: string): Promise<AnswerProps> => {
 	try {
-		const url = `${BASE_URL}?name=${name}`
+		const url = `${BASE_URL}?name=${encodeURIComponent(name)}`;
 		const response = await fetch(url);
 
 		if (!response.ok) {
-			throw new Error('Запись не найдена');
+			throw new Error('Name not found');
 		}
 
-		const data = await response.json();
-
-		alert(`${name} is ${data.gender}`);
+		return await response.json();
 	} catch (error) {
 		if (error instanceof TypeError) {
-			alert('Проблемы с сетью');
-		} else if (error instanceof Error) {
-			alert(error.message);
-		} else {
-			alert('Неизвестная ошибка');
+			throw new Error('Network problems');
 		}
+		throw error;
 	}
 }
 
-export { getData }
+export { getAnswer, AnswerProps }

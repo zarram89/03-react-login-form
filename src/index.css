@@ -70,3 +70,36 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.error-message {
+	font-size: 14px;
+	margin: 0px;
+	margin-bottom: 10px;
+	padding: 0;
+	font-weight: 700;
+}
+
+.input-error {
+	color: tomato
+}
+
+.app-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 16px;
+	padding: 16px;
+  }
+
+  .form-container {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	width: 100%;
+	max-width: 400px;
+  }
+
+  .switch-button {
+	margin-top: 16px;
+	align-self: center;
+  }

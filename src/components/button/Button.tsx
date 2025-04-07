@@ -10,8 +10,8 @@ type ButtonProps = {
 
 function Button({
 	children,
-	type = "submit",
 	className = "button",
+	type = "submit",
 	disabled = false,
 	onClick,
 	...restProps
