@@ -1,0 +1,46 @@
+.auth {
+  width: 300px;
+  margin:  50px auto;
+  padding: 30px;
+  background-color: lightgray;
+  border-radius: 20px;
+}
+
+.auth__form {
+	display: flex;
+	flex-direction: column;
+    /* align-items: center; */
+}
+
+.auth__title {
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 30px;
+  line-height: 120%;
+  text-align: center;
+}
+
+.auth__form input {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+.auth__form input[type="checkbox"] {
+	width: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
