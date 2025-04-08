@@ -1,4 +1,4 @@
-import { useState, FormEvent } from 'react';
+import { useState, FormEvent, useEffect } from 'react';
 import { getAnswer, AnswerProps } from './services/genderize';
 import { nameSchema } from './services/schemas';
 import { z } from 'zod';
@@ -9,6 +9,26 @@ function Genderize() {
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState<string | null>(null);
 	const [validationError, setValidationError] = useState<string | null>(null);
+
+	useEffect(() => {
+		const timer = setTimeout(async () => {
+			if (name && !validationError) {
+				try {
+					setLoading(true);
+					setError(null);
+					const data = await getAnswer(name);
+					setAnswer(data);
+				} catch (err) {
+					setError(err instanceof Error ? err.message : 'Неизвестная ошибка');
+				} finally {
+					setLoading(false);
+				}
+			}
+		}, 500);
+
+		return () => clearTimeout(timer);
+	}, [name, validationError]);
+
 
 	async function handleSubmit(e: FormEvent<HTMLFormElement>) {
 		e.preventDefault();
